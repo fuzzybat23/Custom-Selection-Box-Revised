@@ -1,0 +1,16 @@
+[
+{
+  "modid": "csbr",
+  "name": "Custom Selection Box Revised",
+  "description": "Enhances the selection box drawn around targeted blocks with much fanciness.",
+  "version": "1.0",
+  "mcversion": "1.12",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Fuzzybat23"],
+  "credits": "The Forge and FML guys, and loads of forum help at www.minecraftforge.net, particularly by Choonster, as well as various tutorials on youtube, and BeastGamer for the original idea, from his Custom Block Selection Box v2",
+  "logoFile": "/assets/csbr/images/Tesseract.png",
+  "screenshots": ["/assets/csbr/images/Tesseract.png"],
+  "dependencies": []
+}
+]
