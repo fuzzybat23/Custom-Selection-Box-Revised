@@ -12,8 +12,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 version = "1.0"
-group = "com.fuzzybat23.csbr" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "Custom Selection Box Revised"
+group = "com.fuzzybat23.esbb" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "Enhanced Selection Bounding Box"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {

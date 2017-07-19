@@ -1,8 +1,8 @@
 [
 {
-  "modid": "csbr",
-  "name": "Custom Selection Box Revised",
-  "description": "Enhances the selection box drawn around targeted blocks with much fanciness.",
+  "modid": "esbb",
+  "name": "Enhanced Selection Bounding Box",
+  "description": "Enhances the selection bounding box drawn around targeted blocks.",
   "version": "1.0",
   "mcversion": "1.12",
   "url": "",
