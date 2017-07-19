@@ -1,4 +1,4 @@
-package com.fuzzybat23.csbr;
+package com.fuzzybat23.ebb;
 
 import com.fuzzybat23.csbr.proxy.CommonProxy;
 import net.minecraft.block.state.IBlockState;
@@ -28,20 +28,19 @@ import org.lwjgl.opengl.GL11;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import static com.fuzzybat23.csbr.DrawSelectionCube.drawSelectionCube;
-import static com.fuzzybat23.csbr.DrawSelectionBoundingBox.drawSelectionBoundingBox;
-import static com.fuzzybat23.csbr.GetBlockDamage.getBlockDamage;
+import static com.fuzzybat23.ebb.DrawSelectionCube.drawSelectionCube;
+import static com.fuzzybat23.ebb.DrawSelectionBoundingBox.drawSelectionBoundingBox;
+import static com.fuzzybat23.ebb.GetBlockDamage.getBlockDamage;
 
 
-@net.minecraftforge.fml.common.Mod(modid = "csbr", version = "1.0", clientSideOnly = true, acceptedMinecraftVersions = "[1.12, 1.13)")
-public class CSBR
+@net.minecraftforge.fml.common.Mod(modid = "enhancedboundingbox", version = "1.0", clientSideOnly = true, acceptedMinecraftVersions = "[1.12, 1.13)")
+public class EBB
 {
-    @net.minecraftforge.fml.common.Mod.Instance("CSBR")
-    public static final String MODID = "csbr";
+    @net.minecraftforge.fml.common.Mod.Instance("EBB")
     //public static final Logger LOGGER = LogManager.getLogger();
 
-    public static final String CLIENT_PROXY_CLASS = "com.fuzzybat23.csbr.proxy.ClientProxy";
-    public static final String CLIENT_SERVER_CLASS = "com.fuzzybat23.csbr.proxy.ServerProxy";
+    public static final String CLIENT_PROXY_CLASS = "com.fuzzybat23.ebb.proxy.ClientProxy";
+    public static final String CLIENT_SERVER_CLASS = "com.fuzzybat23.ebb.proxy.ServerProxy";
 
     public static float Red;
     public static float Green;
@@ -59,7 +58,7 @@ public class CSBR
     static float Speed;
 
     @Mod.Instance
-    public static CSBR instance;
+    public static EBB instance;
 
     @SidedProxy(clientSide = CLIENT_PROXY_CLASS, serverSide = CLIENT_SERVER_CLASS)
     public static CommonProxy proxy;
@@ -75,22 +74,22 @@ public class CSBR
         Method method = ReflectionHelper.findMethod(ConfigManager.class, "getConfiguration", null, String.class, String.class);
         Configuration config = (Configuration)method.invoke(null, CSBR.MODID, null);
 
-        ConfigCategory csbf = config.getCategory("general.custom selection box frame");
+        ConfigCategory ebbf = config.getCategory("general.enhanced bounding box frame");
 
-        for(Property p: csbf.getOrderedValues())
+        for(Property p: ebbf.getOrderedValues())
         {
             p.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
         }
 
-        ConfigCategory csbc = config.getCategory("general.custom selection box cube");
+        ConfigCategory ebbc = config.getCategory("general.enhanced bounding box cube");
 
-        for(Property p: csbc.getOrderedValues())
+        for(Property p: ebbc.getOrderedValues())
         {
             p.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
         }
 
-        ConfigCategory csba = config.getCategory("general.custom selection box animation");
-        Property csba_speed_prop = csba.get("2) Blink Animation Speed");
+        ConfigCategory ebba = config.getCategory("general.enhanced bounding box animation");
+        Property csba_speed_prop = ebba.get("2) Blink Animation Speed");
         csba_speed_prop.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
 
         loadVariables();
