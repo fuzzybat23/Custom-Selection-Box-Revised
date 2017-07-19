@@ -33,13 +33,13 @@ public class ModConfig
 
         @Name("2) Green")
         @Comment("Choose a green color value for the selection bounding box between 0 and 255.")
-        @RangeInt(min = 0, max = 128)
-        public int Green = 255;
+        @RangeInt(min = 0, max = 255)
+        public int Green = 128;
 
         @Name("3) Blue")
         @Comment("Choose a blue color value for the selection bounding box between 0 and 255.")
-        @RangeInt(min = 0, max = 0)
-        public int Blue = 255;
+        @RangeInt(min = 0, max = 255)
+        public int Blue = 0;
 
         @Name("4) Alpha Channel")
         @Comment("Choose an alpha channel value for the selection bounding box between 0 and 255.")
@@ -56,13 +56,13 @@ public class ModConfig
     {
         @Name("1) Red")
         @Comment("Choose a red color value for the inner cube between between 0 and 255.")
-        @RangeInt(min = 0, max = 0)
-        public int Red = 255;
+        @RangeInt(min = 0, max = 255)
+        public int Red = 0;
 
         @Name("2) Green")
         @Comment("Choose a green color value for the inner cube between between 0 and 255.")
-        @RangeInt(min = 0, max = 128)
-        public int Green = 255;
+        @RangeInt(min = 0, max = 255)
+        public int Green = 128;
 
         @Name("3) Blue")
         @Comment("Choose a blue color value for the inner cube between between 0 and 255.")
@@ -71,8 +71,8 @@ public class ModConfig
 
         @Name("4) Alpha Channel")
         @Comment("Choose an alpha channel value for the inner cube between 0 and 255.")
-        @RangeInt(min = 0, max = 30)
-        public int Alpha = 255;
+        @RangeInt(min = 0, max = 255)
+        public int Alpha = 30;
     }
 
     public enum enumAnimation

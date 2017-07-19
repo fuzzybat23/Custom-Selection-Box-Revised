@@ -76,23 +76,19 @@ public class ESBB
         Method method = ReflectionHelper.findMethod(ConfigManager.class, "getConfiguration", null, String.class, String.class);
         Configuration config = (Configuration)method.invoke(null, ESBB.MODID, null);
 
-        ConfigCategory csbf = config.getCategory("general.enhanced selection bounding box frame");
+        ConfigCategory esbbf = config.getCategory("general.enhanced selection bounding box frame");
 
-        for(Property p: csbf.getOrderedValues())
-        {
-            p.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
-        }
+        for(Property p: esbbf.getOrderedValues())
+        {  p.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);  }
 
-        ConfigCategory csbc = config.getCategory("general.enhanced selection bounding box cube");
+        ConfigCategory esbbc = config.getCategory("general.enhanced selection bounding box cube");
 
-        for(Property p: csbc.getOrderedValues())
-        {
-            p.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
-        }
+        for(Property p: esbbc.getOrderedValues())
+        {  p.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);  }
 
-        ConfigCategory csba = config.getCategory("general.enhanced selection bounding box animation");
-        Property csba_speed_prop = csba.get("2) Blink Animation Speed");
-        csba_speed_prop.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
+        ConfigCategory esbba = config.getCategory("general.enhanced selection bounding box animation");
+        Property esbba_speed_prop = esbba.get("2) Blink Animation Speed");
+        esbba_speed_prop.setConfigEntryClass(GuiConfigEntries.NumberSliderEntry.class);
 
         loadVariables();
     }
