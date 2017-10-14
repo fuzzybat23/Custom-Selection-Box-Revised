@@ -3,7 +3,7 @@
   "modid": "esbb",
   "name": "Enhanced Selection Bounding Box",
   "description": "Enhances the selection bounding box drawn around targeted blocks.",
-  "version": "1.0",
+  "version": "1.0.1.1",
   "mcversion": "1.12",
   "url": "",
   "updateUrl": "",

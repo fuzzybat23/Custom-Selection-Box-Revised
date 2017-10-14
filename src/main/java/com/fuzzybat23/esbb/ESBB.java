@@ -34,7 +34,7 @@ import static com.fuzzybat23.esbb.GetBlockDamage.getBlockDamage;
 
 
 
-@net.minecraftforge.fml.common.Mod(modid = "esbb", version = "1.0", clientSideOnly = true, acceptedMinecraftVersions = "[1.12, 1.13)")
+@net.minecraftforge.fml.common.Mod(modid = "esbb", version = "1.0.1.1", clientSideOnly = true, acceptedMinecraftVersions = "[1.12, 1.13)")
 public class ESBB
 {
     @net.minecraftforge.fml.common.Mod.Instance("ESBB")
@@ -187,14 +187,17 @@ public class ESBB
                 AxisAlignedBB bb = iblockstate.getSelectedBoundingBox(player.getEntityWorld(), blockpos).grow(0.0020000000949949026D).offset(-d0, -d1, -d2);
 
                 // Do block break progress calc
-                float breakProgress = getBlockDamage(movingObjectPositionIn);
+                if(Animation == 1 || Animation == 2)
+                {
+                    float breakProgress = getBlockDamage(movingObjectPositionIn);
+                    //float breakProgress = getBlockDamage(player, partialTicks);
 
+                    if (Animation == 1)
+                        bb = bb.shrink(breakProgress / 2);
 
-                if (Animation == 1)
-                    bb = bb.shrink(breakProgress / 2);
-
-                if (Animation == 2)
-                    bb = bb.contract(0.0, breakProgress, 0.0);
+                    if (Animation == 2)
+                        bb = bb.contract(0.0, breakProgress, 0.0);
+                }
 
                 // Draw blinking cube
                 drawSelectionCube(bb, bRed, bGreen, bBlue, bAlpha);
